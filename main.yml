@@ -47,6 +47,7 @@
                   - aptitude
                   - tmux
                   - neovim
+                  - keychain
                     #                  - fzf
           remote_git: "/root/.repo_config"
 

@@ -14,6 +14,7 @@ alias fgrep='fgrep --color=auto'
 alias egrep='egrep --color=auto'
 alias ll='ls -alFtr --color'
 alias c='cd -'
+alias python='python3'
 alias tailf="tail -f"
 alias a.weather="curl wttr.in/Milan"
 alias a.myip="curl ifconfig.co"
