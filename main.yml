@@ -29,11 +29,17 @@
                     dest: /root/.config/nvim
                     state: link
                     force: yes
+          - name: Config package3
+            file:
+                    src:  "{{remote_git}}/config/bashrc"
+                    dest: /root/.bashrc
+                    state: link
 
   vars:
           packages:
                   - aptitude
                   - tmux
                   - neovim
+                  - fzf
           remote_git: "/root/.repo_config"
 
