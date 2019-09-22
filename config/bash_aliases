@@ -1,0 +1,41 @@
+alias xclip='xclip -selection c'
+alias mv='mv -i'
+alias a.curl='curl -kIL'
+alias vvim='vim --servername VIM'
+alias cp='cp -i'
+alias lr='ls -alFrt --color=auto'
+alias ls='ls --color=auto'
+alias la='ls -A'
+alias l='ls -lrt'
+alias dir='dir --color=auto'
+alias vdir='vdir --color=auto'
+alias grep='grep --color=auto'
+alias fgrep='fgrep --color=auto'
+alias egrep='egrep --color=auto'
+alias ll='ls -alFtr --color'
+alias c='cd -'
+alias tailf="tail -f"
+alias a.weather="curl wttr.in/Milan"
+alias a.myip="curl ifconfig.co"
+#alias a.myip="dig +short myip.opendns.com @resolver1.opendns.com"
+alias powertop="sudo powertop"
+alias v="vim"
+alias vim='nvim'
+alias svim="sudoedit"
+alias fuck='sudo $(history -p !!)'
+alias nmap="sudo nmap"
+alias a.host="sudo vim /etc/hosts"
+alias a.randp="< /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo"
+alias a.ssh_no_key="ssh -o PreferredAuthentications=keyboard-interactive,password -o PubkeyAuthentication=no"   
+alias a.ssh_custom="ssh -F ssh.config"
+
+
+####GIT ALIAS ###
+alias ga="git add"
+alias gc="git commit"
+alias gp="git push"
+alias gl='git log --pretty=format:"%C(yellow)%h\\ %ad%Cred%d\\ %Creset%s%Cblue\\ [%cn]" --decorate --date=short'
+####GIT ALIAS ###
+
+
+

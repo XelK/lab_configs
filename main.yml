@@ -34,12 +34,19 @@
                     src:  "{{remote_git}}/config/bashrc"
                     dest: /root/.bashrc
                     state: link
+                    force: yes
+          - name: Config package4
+            file:
+                    src:  "{{remote_git}}/config/bash_aliases"
+                    dest: /root/.config/bash_aliases
+                    state: link
+                    force: yes
 
   vars:
           packages:
                   - aptitude
                   - tmux
                   - neovim
-                  - fzf
+                    #                  - fzf
           remote_git: "/root/.repo_config"
 

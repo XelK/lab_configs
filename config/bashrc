@@ -54,8 +54,8 @@ shopt -s checkwinsize
 force_color_prompt=yes # should be on the output of commands, not on the prompt
 
 # Add bash aliases.
-if [ -f ~/.bash_aliases ]; then
-    source ~/.bash_aliases
+if [ -f ~/.config/.bash_aliases ]; then
+    source ~/.config/.bash_aliases
 fi
 
 export PS1="\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;6m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \t\n>\[$(tput sgr0)\]"
