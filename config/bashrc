@@ -39,11 +39,7 @@ shopt -s autocd #change directory
 bind '"\e[A": history-search-backward'
 bind '"\e[B": history-search-forward'
 export HISTCONTROL=ignoredups:erasedups
-#HISTCONTROL=ignoredups:ignorespace # don't put duplicate lines in the history and force ignoredups and ignorespace
 shopt -s histappend  # append to the history file, don't overwrite it
-# for setting history length see HISTSIZE and HISTFILESIZE in bash
-#HISTSIZE=1000
-#HISTFILESIZE=2000
 HISTSIZE= HISTFILESIZE= #infinite
 export HISTTIMEFORMAT="%d/%m/%y %T "
 PROMPT_COMMAND="history -a; history -c; history -r; $PROMPT_COMMAND" # Append commands to the history every time a prompt is shown, instead of after closing the session.
@@ -54,8 +50,8 @@ shopt -s checkwinsize
 force_color_prompt=yes # should be on the output of commands, not on the prompt
 
 # Add bash aliases.
-if [ -f ~/.config/.bash_aliases ]; then
-    source ~/.config/.bash_aliases
+if [ -f ~/.config/bash_aliases ]; then
+    source ~/.config/bash_aliases
 fi
 
 export PS1="\[\033[38;5;1m\]\u\[$(tput sgr0)\]\[\033[38;5;15m\]@\[$(tput sgr0)\]\[\033[38;5;6m\]\H\[$(tput sgr0)\]\[\033[38;5;15m\] \[$(tput sgr0)\]\[\033[38;5;11m\]\w\[$(tput sgr0)\]\[\033[38;5;15m\] \t\n>\[$(tput sgr0)\]"
