@@ -1,0 +1,18 @@
+# ~/.profile: executed by Bourne-compatible login shells.
+
+if [ "$BASH" ]; then
+  if [ -f ~/.bashrc ]; then
+    . ~/.bashrc
+  fi
+fi
+
+mesg n || true
+#start tmux or attach to running session
+
+if [ $(ps aux | grep -v grep|grep tmux| wc -l | awk '{print $1}') == "0" ] ;
+then
+        tmux
+else
+        tmux a -t 0
+fi
+

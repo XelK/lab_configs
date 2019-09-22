@@ -1,0 +1,26 @@
+### Ansible playbook for provision of vms for Lab use
+---
+- hosts: all
+  become: true
+  tasks:
+          - name: Install packages
+            apt:
+                  upgrade: yes
+                  update_cache: yes
+            apt:
+                  name: "{{ packages }}"
+                  state: latest
+                  #update_cache: yes
+            vars:
+                    packages:
+                            - aptitude
+                            - tmux
+                            - neovim
+
+          - name: load configs
+            copy:
+                    src: config/tmux.conf
+                    dest: /root/.tmux.conf
+            copy:
+                    src: config/nvim/
+                    dest: /root/.config/nvim/
