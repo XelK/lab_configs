@@ -7,20 +7,33 @@
             apt:
                   upgrade: yes
                   update_cache: yes
+          - name: Install packages
             apt:
                   name: "{{ packages }}"
                   state: latest
                   #update_cache: yes
-            vars:
-                    packages:
-                            - aptitude
-                            - tmux
-                            - neovim
 
           - name: load configs
-            copy:
-                    src: config/tmux.conf
+            git:
+                    repo: https://github.com/XelK/lab_configs.git
+                    dest: "{{remote_git}}"
+                    #force: yes
+          - name: Config package1
+            file:
+                    src: "{{remote_git}}/config/tmux.conf"
                     dest: /root/.tmux.conf
-            copy:
-                    src: config/nvim/
-                    dest: /root/.config/nvim/
+                    state: link
+          - name: Config package2
+            file:
+                    src:  "{{remote_git}}/config/nvim"
+                    dest: /root/.config/nvim
+                    state: link
+                    force: yes
+
+  vars:
+          packages:
+                  - aptitude
+                  - tmux
+                  - neovim
+          remote_git: "/root/.repo_config"
+
